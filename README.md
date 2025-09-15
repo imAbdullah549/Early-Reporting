@@ -1,4 +1,4 @@
-# early-reporting
+# Early-Reporting
 
 A React + Redux Toolkit reporting dashboard that provides KPIs, charts, and tabular/virtualized reports with filtering by date, user, and activity.  
 Built with **React, TypeScript, Redux Toolkit, RTK Query, Ant Design, and Ant Design Plots**.
@@ -8,7 +8,7 @@ Built with **React, TypeScript, Redux Toolkit, RTK Query, Ant Design, and Ant De
 - **Filters**: Date range, users, and activities with virtualized multi-selects.
 - **KPIs Summary**: Total hours, entries, and distinct users at a glance.
 - **Charts**:
-  - Time by activity or user (bar + pie charts).
+  - Group by activity or user (bar + pie charts).
   - Daily stacked activity chart with scrollable timeline.
 - **Reports**:
   - Standard Ant Design table with pagination.
