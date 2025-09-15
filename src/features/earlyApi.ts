@@ -34,10 +34,12 @@ type ActivitiesResponse = {
 
 export type ReportResponse = ReportPayload;
 
+const baseUrl = import.meta.env.PROD ? "/api/proxy" : "/proxy";
+
 export const earlyApi = createApi({
   reducerPath: "earlyApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "/proxy",
+    baseUrl,
     prepareHeaders: (headers, { getState }) => {
       const token = (getState() as RootState).auth.token;
       if (token) headers.set("Authorization", `Bearer ${token}`);
