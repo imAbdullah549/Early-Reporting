@@ -35,7 +35,7 @@ export default function GroupColumnGrpah({
       colorField: "name",
       height: 450,
       label: {
-        text: (d: any) =>
+        text: (d: { minutes: number }) =>
           `${((d.minutes / 60 / totalHours) * 100).toFixed(1)}%`,
         textBaseline: "bottom",
       },

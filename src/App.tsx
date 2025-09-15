@@ -1,4 +1,4 @@
-import { Layout, Typography, Card } from "antd";
+import { Layout, Typography } from "antd";
 import ReportingPage from "./Pages/ReportingPage";
 
 const { Header, Content, Footer } = Layout;

@@ -44,12 +44,6 @@ export default function GroupPieGraph({
     [data, metric, totalHours]
   );
 
-  const formatValue = (v: number) => {
-    if (metric === "minutes") return `${Math.round(v)} min`;
-    if (metric === "hours") return `${v.toFixed(1)} h`;
-    return `${v.toFixed(1)} %`;
-  };
-
   const centerText =
     metric === "minutes"
       ? `${Math.round(totalMinutes)} min`
@@ -57,8 +51,13 @@ export default function GroupPieGraph({
       ? `${totalHours.toFixed(1)} h`
       : "100 %";
 
-  const pieCfg = useMemo(
-    () => ({
+  const pieCfg = useMemo(() => {
+    const formatValue = (v: number) => {
+      if (metric === "minutes") return `${Math.round(v)} min`;
+      if (metric === "hours") return `${v.toFixed(1)} h`;
+      return `${v.toFixed(1)} %`;
+    };
+    return {
       data: pieData,
       angleField: "value",
       colorField: "name",
@@ -66,7 +65,8 @@ export default function GroupPieGraph({
       radius: 1,
       innerRadius: 0.6,
       label: {
-        text: (d: any) => `${d.name}\n ${formatValue(d.value)}`,
+        text: (d: { name: string; value: number }) =>
+          `${d.name}\n ${formatValue(d.value)}`,
       },
       legend: {
         color: {
@@ -88,9 +88,8 @@ export default function GroupPieGraph({
           },
         },
       ],
-    }),
-    [pieData, formatValue, centerText]
-  );
+    };
+  }, [pieData, centerText, metric]);
 
   if (error) {
     return (
