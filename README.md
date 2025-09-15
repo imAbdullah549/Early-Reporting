@@ -15,10 +15,6 @@ Built with **React, TypeScript, Redux Toolkit, RTK Query, Ant Design, and Ant De
   - Virtualized infinite scroll list for large datasets.
 - **Performance Optimizations**: Virtual list rendering, memoized selectors, and chart data transformations.
 
-## Preview
-
-- (Optional: Add a deployed link if available, e.g. Vercel/Netlify preview)
-
 ## Getting Started
 
 ### Prerequisites
